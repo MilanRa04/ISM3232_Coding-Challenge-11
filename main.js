@@ -24,3 +24,15 @@ quantityInput.addEventListener('input', updateTotalPrice);
 //Task 3: As noted above the code for task 3 is included at the beginning of task 2: lines 11-18
 
 
+// Task 4: Handle order submissions.
+const placeOrderButton = document.getElementById('place-order');
+const orderSummary = document.getElementById('order-summary');
+
+// Add event listener for the place order button to ddetect when its clicked.
+placeOrderButton.addEventListener('click', function() {
+    const selectedProduct = productSelector.options[productSelector.selectedIndex].text;
+    const quantity = parseInt(quantityInput.value);
+    const totalPrice = totalPriceElement.textContent;
+
+    orderSummary.textContent = `You ordered ${selectedProduct}. Total price: $${totalPrice}`;
+});
